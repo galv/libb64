@@ -3,7 +3,7 @@ BINARIES = base64
 # Build flags (uncomment one)
 #############################
 # Release build flags
-CFLAGS += -O3
+CFLAGS ?= -O3
 #############################
 # Debug build flags
 #CFLAGS += -g
@@ -34,7 +34,7 @@ vpath %.a ../src
 
 all: $(TARGETS) #strip
 
-base64: libb64.a
+base64: -lb64
 
 strip:
 	strip $(BINARIES) *.exe
